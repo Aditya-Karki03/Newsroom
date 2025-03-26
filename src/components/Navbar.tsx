@@ -6,6 +6,10 @@ const Navbar = () => {
   const navigate = useNavigate();
   const newsOptions = [
     {
+      label: "Home",
+      value: "/",
+    },
+    {
       label: "Technology",
       value: "/technology",
     },
