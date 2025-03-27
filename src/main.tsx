@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import { BrowserRouter, Route, Routes } from "react-router";
 import Dashboard from "./pages/Dashboard";
-import AllNews from "./pages/AllNews";
+import AllNews from "./pages/AllNews/AllNews";
 import AllTechNews from "./pages/AllTechNews";
 import AllBusinessNews from "./pages/AllBusinessNews";
 import AllSportsNews from "./pages/AllSports/AllSportsNews";

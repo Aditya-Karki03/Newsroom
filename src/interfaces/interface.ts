@@ -56,3 +56,11 @@ export interface INewsDataCard {
   urlToImage: string;
   publishedAt: string;
 }
+
+export interface IAllNewsInitialState {
+  allNewsLoading: boolean;
+  allNewsSuccess: boolean;
+  allNewsFail: boolean;
+  allNewsError: IError | null;
+  allNewsData: INews[] | [];
+}
