@@ -3,24 +3,41 @@ const VITE_API_KEY = import.meta.env.VITE_API_KEY;
 
 export const sportsNewsApi = () => {
   return axios.get(
-    `https://newsapi.org/v2/top-headlines?country=us&category=sports&apiKey=${VITE_API_KEY}`
+    `https://newsapi.org/v2/top-headlines?country=us&category=sports`,
+    {
+      headers: {
+        Authorization: VITE_API_KEY,
+      },
+    }
   );
 };
 
 export const allNewsApi = () => {
-  return axios.get(
-    `https://newsapi.org/v2/top-headlines?country=us&apiKey=${VITE_API_KEY}`
-  );
+  return axios.get(`https://newsapi.org/v2/top-headlines?country=us`, {
+    headers: {
+      Authorization: VITE_API_KEY,
+    },
+  });
 };
 
 export const allBusinessNewsApi = () => {
   return axios.get(
-    `https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=${VITE_API_KEY}`
+    `https://newsapi.org/v2/top-headlines?country=us&category=business`,
+    {
+      headers: {
+        Authorization: VITE_API_KEY,
+      },
+    }
   );
 };
 
 export const allTechNewsApi = () => {
   return axios.get(
-    `https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=${VITE_API_KEY}`
+    `https://newsapi.org/v2/top-headlines?country=us&category=technology`,
+    {
+      headers: {
+        Authorization: VITE_API_KEY,
+      },
+    }
   );
 };
