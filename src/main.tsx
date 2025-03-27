@@ -4,7 +4,7 @@ import "./index.css";
 import { BrowserRouter, Route, Routes } from "react-router";
 import Dashboard from "./pages/Dashboard";
 import AllNews from "./pages/AllNews/AllNews";
-import AllTechNews from "./pages/AllTechNews";
+import AllTechNews from "./pages/AllTechNews/AllTechNews";
 import AllBusinessNews from "./pages/AllBusinessNews/AllBusinessNews";
 import AllSportsNews from "./pages/AllSports/AllSportsNews";
 import { ConfigProvider } from "antd";

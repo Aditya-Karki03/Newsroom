@@ -72,3 +72,11 @@ export interface IBusinessNewsInitialState {
   allBusinessNewsError: IError | null;
   allBusinessNewsData: INews[] | [];
 }
+
+export interface ITechNewsInitialState {
+  allTechNewsLoading: boolean;
+  allTechNewsSuccess: boolean;
+  allTechNewsFail: boolean;
+  allTechNewsError: IError | null;
+  allTechNewsData: INews[] | [];
+}
