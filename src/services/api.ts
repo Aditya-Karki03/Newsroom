@@ -12,3 +12,9 @@ export const allNewsApi = () => {
     `https://newsapi.org/v2/top-headlines?country=us&apiKey=${VITE_API_KEY}`
   );
 };
+
+export const allBusinessNewsApi = () => {
+  return axios.get(
+    `https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=${VITE_API_KEY}`
+  );
+};

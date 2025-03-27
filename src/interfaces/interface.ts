@@ -64,3 +64,11 @@ export interface IAllNewsInitialState {
   allNewsError: IError | null;
   allNewsData: INews[] | [];
 }
+
+export interface IBusinessNewsInitialState {
+  allBusinessNewsLoading: boolean;
+  allBusinessNewsSuccess: boolean;
+  allBusinessNewsFail: boolean;
+  allBusinessNewsError: IError | null;
+  allBusinessNewsData: INews[] | [];
+}
