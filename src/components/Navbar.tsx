@@ -24,7 +24,7 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="sticky border border-black/10 min-w-lg w-screen  py-2 shadow-md flex justify-center ">
+    <div className="fixed top-0 z-10 border bg-white border-black/10 w-screen  py-2 shadow-md flex justify-center ">
       <Flex gap="middle" align="center">
         <Segmented
           options={newsOptions}
