@@ -80,3 +80,15 @@ export interface ITechNewsInitialState {
   allTechNewsError: IError | null;
   allTechNewsData: INews[] | [];
 }
+
+export interface ISearchNewsInitialState {
+  searchNewsLoading: boolean;
+  searchNewsSuccess: boolean;
+  searchNewsFail: boolean;
+  searchNewsError: IError | null;
+  searchNewsData: INews[] | [];
+}
+
+export interface IQuery {
+  query: string;
+}

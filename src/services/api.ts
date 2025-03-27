@@ -1,4 +1,5 @@
 import axios from "axios";
+import { IQuery } from "../interfaces/interface";
 const VITE_API_KEY = import.meta.env.VITE_API_KEY;
 
 export const sportsNewsApi = () => {
@@ -34,6 +35,17 @@ export const allBusinessNewsApi = () => {
 export const allTechNewsApi = () => {
   return axios.get(
     `https://newsapi.org/v2/top-headlines?country=us&category=technology`,
+    {
+      headers: {
+        Authorization: VITE_API_KEY,
+      },
+    }
+  );
+};
+
+export const searchNewsApi = (data: IQuery) => {
+  return axios.get(
+    `https://newsapi.org/v2/everything?q=${data?.query}&sortBy=popularity`,
     {
       headers: {
         Authorization: VITE_API_KEY,

@@ -10,6 +10,7 @@ import AllSportsNews from "./pages/AllSports/AllSportsNews";
 import { ConfigProvider } from "antd";
 import { Provider } from "react-redux";
 import store from "./redux/store";
+import SearchedNews from "./pages/SearchedNews/SearchedNews";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -35,6 +36,7 @@ createRoot(document.getElementById("root")!).render(
               <Route path="/sports" element={<AllSportsNews />} />
               <Route path="/technology" element={<AllTechNews />} />
               <Route path="/business" element={<AllBusinessNews />} />
+              <Route path="/results" element={<SearchedNews />} />
             </Route>
           </Routes>
         </BrowserRouter>
