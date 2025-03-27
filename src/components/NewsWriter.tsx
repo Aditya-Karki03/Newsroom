@@ -2,23 +2,11 @@ import React from "react";
 import { Card, Flex } from "antd";
 import { Typography } from "antd";
 import { Clock, Newspaper } from "lucide-react";
-
-interface NewsDataCard {
-  source: {
-    id: string | null;
-    name: string;
-  };
-  author: string;
-  title: string;
-  description: string;
-  url: string;
-  urlToImage: string;
-  publishedAt: string;
-}
+import { INewsDataCard } from "../interfaces/interface";
 
 const { Title } = Typography;
 
-const NewsCard: React.FC<NewsDataCard> = (data) => {
+const NewsCard: React.FC<INewsDataCard> = (data) => {
   // function formatAMPM(date) {
   //     var hours = date.getHours();
   //     var minutes = date.getMinutes();
@@ -39,7 +27,7 @@ const NewsCard: React.FC<NewsDataCard> = (data) => {
 
   return (
     <Card
-      loading={false}
+      loading={data?.loading}
       cover
       style={{ width: 900, border: "1px solid rgba(0, 0, 0, 0.2)" }}
     >
