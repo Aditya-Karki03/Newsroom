@@ -59,6 +59,7 @@ export interface INewsDataCard {
 
 export interface IAllNewsInitialState {
   allNewsLoading: boolean;
+  infiniteScrollLoading: boolean;
   allNewsSuccess: boolean;
   allNewsFail: boolean;
   allNewsError: IError | null;
@@ -92,3 +93,5 @@ export interface ISearchNewsInitialState {
 export interface IQuery {
   query: string;
 }
+
+export type TPage = number;

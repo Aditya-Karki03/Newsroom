@@ -1,12 +1,18 @@
 import { call, put, takeLatest } from "redux-saga/effects";
-import { IAllSportsNewsApiResponse, IError } from "../../interfaces/interface";
-// import { PayloadAction } from "@reduxjs/toolkit";
+import {
+  IAllSportsNewsApiResponse,
+  IError,
+  TPage,
+} from "../../interfaces/interface";
 import * as API from "../../services/api";
 import { allNewsFailed, allNewsRetrieved, newsRequest } from "./slice";
+import { PayloadAction } from "@reduxjs/toolkit";
 
-function* getAllNews() {
+function* getAllNews(action: PayloadAction<TPage>) {
   try {
-    const response: IAllSportsNewsApiResponse = yield call(API.allNewsApi);
+    const response: IAllSportsNewsApiResponse = yield call(() =>
+      API.allNewsApi(action.payload)
+    );
     if (response?.data?.status == "ok") {
       yield put(allNewsRetrieved(response?.data));
     } else {

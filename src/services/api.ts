@@ -1,5 +1,5 @@
 import axios from "axios";
-import { IQuery } from "../interfaces/interface";
+import { IQuery, TPage } from "../interfaces/interface";
 const VITE_API_KEY = import.meta.env.VITE_API_KEY;
 
 export const sportsNewsApi = () => {
@@ -13,12 +13,15 @@ export const sportsNewsApi = () => {
   );
 };
 
-export const allNewsApi = () => {
-  return axios.get(`https://newsapi.org/v2/top-headlines?country=us`, {
-    headers: {
-      Authorization: VITE_API_KEY,
-    },
-  });
+export const allNewsApi = (page: TPage) => {
+  return axios.get(
+    `https://newsapi.org/v2/top-headlines?country=us&pageSize=5&page=${page}`,
+    {
+      headers: {
+        Authorization: VITE_API_KEY,
+      },
+    }
+  );
 };
 
 export const allBusinessNewsApi = () => {
