@@ -59,6 +59,7 @@ export interface INewsDataCard {
 
 export interface IAllNewsInitialState {
   allNewsLoading: boolean;
+  infiniteScrollLoading: boolean;
   allNewsSuccess: boolean;
   allNewsFail: boolean;
   allNewsError: IError | null;
@@ -80,3 +81,17 @@ export interface ITechNewsInitialState {
   allTechNewsError: IError | null;
   allTechNewsData: INews[] | [];
 }
+
+export interface ISearchNewsInitialState {
+  searchNewsLoading: boolean;
+  searchNewsSuccess: boolean;
+  searchNewsFail: boolean;
+  searchNewsError: IError | null;
+  searchNewsData: INews[] | [];
+}
+
+export interface IQuery {
+  query: string;
+}
+
+export type TPage = number;

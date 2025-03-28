@@ -2,25 +2,25 @@ import { call, put, takeLatest } from "redux-saga/effects";
 import {
   IAllSportsNewsApiResponse,
   IError,
-  TPage,
+  IQuery,
 } from "../../interfaces/interface";
 import * as API from "../../services/api";
-import { allNewsFailed, allNewsRetrieved, newsRequest } from "./slice";
+import { searchNewsFailed, searchNewsRetrieved, searchRequest } from "./slice";
 import { PayloadAction } from "@reduxjs/toolkit";
 
-function* getAllNews(action: PayloadAction<TPage>) {
+function* getSearchedNews(action: PayloadAction<IQuery>) {
   try {
     const response: IAllSportsNewsApiResponse = yield call(() =>
-      API.allNewsApi(action.payload)
+      API.searchNewsApi(action.payload)
     );
     if (response?.data?.status == "ok") {
-      yield put(allNewsRetrieved(response?.data));
+      yield put(searchNewsRetrieved(response?.data));
     } else {
       const errMessage: IError = {
         error: "Cannot Retrieve Sports News at this time",
         errorCode: response?.data?.status,
       };
-      yield put(allNewsFailed(errMessage));
+      yield put(searchNewsFailed(errMessage));
     }
   } catch (error: any) {
     let message = "Something went wrong. while fetching all connections";
@@ -31,8 +31,8 @@ function* getAllNews(action: PayloadAction<TPage>) {
       error: message,
       errorCode: error?.response?.status,
     };
-    yield put(allNewsFailed(errMessage));
+    yield put(searchNewsFailed(errMessage));
   }
 }
 
-export const getAllNewsData = [takeLatest(newsRequest, getAllNews)];
+export const getSearchedNewsData = [takeLatest(searchRequest, getSearchedNews)];

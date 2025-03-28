@@ -1,26 +1,58 @@
 import axios from "axios";
+import { IQuery, TPage } from "../interfaces/interface";
 const VITE_API_KEY = import.meta.env.VITE_API_KEY;
 
 export const sportsNewsApi = () => {
   return axios.get(
-    `https://newsapi.org/v2/top-headlines?country=us&category=sports&apiKey=${VITE_API_KEY}`
+    `https://newsapi.org/v2/top-headlines?country=us&category=sports`,
+    {
+      headers: {
+        Authorization: VITE_API_KEY,
+      },
+    }
   );
 };
 
-export const allNewsApi = () => {
+export const allNewsApi = (page: TPage) => {
   return axios.get(
-    `https://newsapi.org/v2/top-headlines?country=us&apiKey=${VITE_API_KEY}`
+    `https://newsapi.org/v2/top-headlines?country=us&pageSize=5&page=${page}`,
+    {
+      headers: {
+        Authorization: VITE_API_KEY,
+      },
+    }
   );
 };
 
 export const allBusinessNewsApi = () => {
   return axios.get(
-    `https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=${VITE_API_KEY}`
+    `https://newsapi.org/v2/top-headlines?country=us&category=business`,
+    {
+      headers: {
+        Authorization: VITE_API_KEY,
+      },
+    }
   );
 };
 
 export const allTechNewsApi = () => {
   return axios.get(
-    `https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=${VITE_API_KEY}`
+    `https://newsapi.org/v2/top-headlines?country=us&category=technology`,
+    {
+      headers: {
+        Authorization: VITE_API_KEY,
+      },
+    }
+  );
+};
+
+export const searchNewsApi = (data: IQuery) => {
+  return axios.get(
+    `https://newsapi.org/v2/everything?q=${data?.query}&sortBy=popularity`,
+    {
+      headers: {
+        Authorization: VITE_API_KEY,
+      },
+    }
   );
 };
