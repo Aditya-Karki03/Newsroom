@@ -1,10 +1,11 @@
 import { Input, Flex, Segmented } from "antd";
-import { useNavigate } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 
 const { Search } = Input;
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const newsOptions = [
     {
       label: "Home",
@@ -36,6 +37,7 @@ const Navbar = () => {
           options={newsOptions}
           size="large"
           shape="round"
+          value={location.pathname}
           onChange={(value) => navigate(value)}
         />
       </Flex>
