@@ -25,13 +25,13 @@ export interface IAllSportsInitialState {
   allSportsNewsData: INews[] | [];
 }
 
-export interface IAllSportsNewsData {
+export interface INewsData {
   status: string;
   totalResults: number;
   articles: INews[];
 }
 
-export interface IAllSportsNewsApiResponse {
+export interface INewsApiResponse {
   data: {
     status: string;
     totalResults: number;

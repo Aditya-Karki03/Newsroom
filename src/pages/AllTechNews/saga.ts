@@ -1,5 +1,5 @@
 import { call, put, takeLatest } from "redux-saga/effects";
-import { IAllSportsNewsApiResponse, IError } from "../../interfaces/interface";
+import { INewsApiResponse, IError } from "../../interfaces/interface";
 // import { PayloadAction } from "@reduxjs/toolkit";
 import * as API from "../../services/api";
 import {
@@ -10,7 +10,7 @@ import {
 
 function* getTechNews() {
   try {
-    const response: IAllSportsNewsApiResponse = yield call(API.allTechNewsApi);
+    const response: INewsApiResponse = yield call(API.allTechNewsApi);
     if (response?.data?.status == "ok") {
       yield put(allTechNewsRetrieved(response?.data));
     } else {

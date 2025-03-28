@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import {
   IAllSportsInitialState,
-  IAllSportsNewsData,
+  INewsData,
   IError,
 } from "../../interfaces/interface";
 import { PayloadAction } from "@reduxjs/toolkit";
@@ -21,10 +21,7 @@ const sportsNewsSlice = createSlice({
       state.allSportsNewsLoading = true;
       state.allSportsNewsError = null;
     },
-    allSportsNewsRetrieved: (
-      state,
-      action: PayloadAction<IAllSportsNewsData>
-    ) => {
+    allSportsNewsRetrieved: (state, action: PayloadAction<INewsData>) => {
       state.allSportsNewsLoading = false;
       state.allSportsNewsSuccess = true;
 
