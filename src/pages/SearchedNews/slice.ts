@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import {
   ISearchNewsInitialState,
-  IAllSportsNewsData,
+  INewsData,
   IError,
   IQuery,
 } from "../../interfaces/interface";
@@ -23,7 +23,7 @@ const searchNewsSlice = createSlice({
       state.searchNewsError = null;
       state.searchNewsData = [];
     },
-    searchNewsRetrieved: (state, action: PayloadAction<IAllSportsNewsData>) => {
+    searchNewsRetrieved: (state, action: PayloadAction<INewsData>) => {
       state.searchNewsLoading = false;
       state.searchNewsSuccess = true;
       state.searchNewsData = [

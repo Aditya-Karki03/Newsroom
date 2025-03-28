@@ -1,16 +1,12 @@
 import { call, put, takeLatest } from "redux-saga/effects";
-import {
-  IAllSportsNewsApiResponse,
-  IError,
-  IQuery,
-} from "../../interfaces/interface";
+import { INewsApiResponse, IError, IQuery } from "../../interfaces/interface";
 import * as API from "../../services/api";
 import { searchNewsFailed, searchNewsRetrieved, searchRequest } from "./slice";
 import { PayloadAction } from "@reduxjs/toolkit";
 
 function* getSearchedNews(action: PayloadAction<IQuery>) {
   try {
-    const response: IAllSportsNewsApiResponse = yield call(() =>
+    const response: INewsApiResponse = yield call(() =>
       API.searchNewsApi(action.payload)
     );
     if (response?.data?.status == "ok") {
