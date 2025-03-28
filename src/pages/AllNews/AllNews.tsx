@@ -4,13 +4,13 @@ import { newsRequest } from "./slice";
 import { RootState } from "../../redux/store";
 import NewsCard from "../../components/NewsWriter";
 import { Spin } from "antd";
-// import { useNotification } from "../../hooks/useNotification";
 
 const AllNews = () => {
   const [page, setPage] = useState(1);
   const dispatch = useDispatch();
-  const { allNewsLoading, allNewsData, allNewsError, infiniteScrollLoading } =
-    useSelector((store: RootState) => store?.allNews);
+  const { allNewsLoading, allNewsData, infiniteScrollLoading } = useSelector(
+    (store: RootState) => store?.allNews
+  );
 
   useEffect(() => {
     dispatch(newsRequest(page));
